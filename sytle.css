@@ -1,0 +1,43 @@
+
+body {
+  transition: background-color 1s;
+}
+
+p {
+  font-size: 1.4rem;
+  max-width: 500px;
+  margin: 1rem auto 3rem;
+}
+
+.letter-3 {
+  margin-top: 9rem;
+}
+
+.letter-4 {
+  margin-top: -12rem;
+}
+
+
+body > div:nth-child(2n) p {
+  margin-left: 10%;
+}
+
+body > div:nth-child(2n+1) p {
+  margin-right: 10%;
+}
+
+
+span {
+  position: relative;
+  display: inline-block;
+  padding: 0.1em 0.2em;
+  margin: 0.1em;
+  border: 1px solid currentColor;
+  cursor: move;
+}
+
+span:hover,
+span.moved {
+  color: white;
+}
+

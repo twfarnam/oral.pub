@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <link rel=stylesheet href=sytle.css>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/blast-text/jquery.blast.min.js"></script>
+    <script>
+      $(function() {
+        $("p").blast({ delimiter: "word" });
+
+        var moveCount = 10;
+        var wordMoving;
+        var startX;
+        var startY;
+        $('span').mousedown(function(e) {
+          wordMoving = e.target;
+          $(e.target).addClass('moved');
+          var pct = Math.min(100, 100 * (1 - (moveCount++ / 50)));
+          console.log(pct);
+          // green: 
+          //$(document.body).css({ background: 'hsl(113, 13%, ' + pct + '%)' });
+          $(document.body).css({ background: 'hsl(234, 5%, ' + pct + '%)' });
+          startX = e.clientX;
+          startY = e.clientY;
+          // startX = $(e.target).css('left').slice(0,-2) * 1;
+          // startY = $(e.target).css('top').slice(0,-2) * 1;
+        });
+        $(document).mousemove(function(e) {
+          e.preventDefault();
+          if (wordMoving) {
+            //console.log($(wordMoving), startX, startY);
+            var x = e.clientX - startX;
+            var y = e.clientY - startY;
+            $(wordMoving).css({left: x, top: y});
+          }
+        });
+        $(document).mouseup(function(e) {
+          wordMoving = null;
+        });
+      });
+    </script>
+  </head>
+  <body>
+
+    <div class=letter-1>
+      <p>Dear &mdash;</p>
+      <p>The sky rubs itself pink and fragrant this morning. The pealing bells for church, the happiness of trees that burst along the rim of hills, between or really along the ramshackle homes — something wild still. The windows catch the low perpendicular sunlight like eyes glowing in a dark wood. Or something fiercer: a heart burning, just before the shot.</p>
+      <p>Is even a single ugly pigeon swooping against the rusted roofs unknown to you?</p>
+      <p>The sun casts itself evenly over the hills now. Cast — casting a line, a net: all are metaphors for prey and prayer.</p>
+      <p>(And tell me, what do I write, since you have robbed me of my disquiet?)</p>
+    </div>
+
+    <div class=letter-2>
+      <p>Dear &mdash; </p>
+      <p>“My twin” — or so you called me. But do twins not experience relief at their sudden wholeness of self when separated? For with you there is only absence camouflaged by this terrible avalanche of words.</p>
+    </div>
+
+    <div class=letter-3>
+      <p>Dear &mdash;</p>
+      <p>How often do I write you? I lose count. I work little, wandering around my tiny apartment, going from the ostensible living room (couch) to the ostensible bedroom (bed) to the ostensible bathroom (sink, toilet) and afterwards into the kitchen to wash yesterday’s coffee pot and start afresh, backwards, already behind, already thinking not of work but of letters and hands. I no longer remember even my own path towards this thing you once identified as winning but I can only define as a slanted sideways vector, the angle at which the rain comes down from the sky where you live.</p>
+    </div>
+
+    <div class=letter-4>
+      <p>Dear &mdash;</p>
+      <p>How is that you so perfectly anticipate my walks, my clothes, my desires?</p>
+      <p>I pulled your hand into the tub / drenched after the rain.</p>
+    </div>
+
+    <div class=letter-5>
+      <p>(Dear &mdash;</p>
+      <p>Se murió la batería de mi celular. En realidad estas cartas son truchas, falsas — solo las escribo cuando la tecnología instante del texto me falla, o cuando la tecnología anciana del cuerpo demanda que duermes y yo me quedo despierta. La insomnia es una bestia que come el amor, o lo convierte en algo más desesperado.)</p>
+    </div>
+
+    <div class=letter-6>
+      <p>Dear &mdash;</p>
+      <p>I am up high but I am drowning are you busy or am I drowning in lack, please, N, I can see the old water tower from here, the ruins of that third-world aqueduct, I can see into the German cemetery, I can see even over the walls of the prison I am free on top of my house awaiting rescue awaiting signal the wave is coming I am drowning I will drown I could take you right on this roof or you could take me neither of us has to die we could take turns taking each other </p>
+    </div>
+
+    <div class=letter-7>
+      <p>Dear &mdash;</p>
+      <p>The world grows light late here, being winter so far south. This lack of light used to bother me, how can one live so much in the dark, but now I think, how nice to rise at eight </p>
+      <p>and catch the sunrise. </p>
+      <p>It is like catching God naked.</p>
+      <p>I reread my letters to you — that they have even taken on your syntax, your hyperbole.</p>
+      <p>It is terrifying to watch my voice melt into yours. My throat is rough this morning, perhaps a symptom of my capitulation, the exhilarating loss. </p>
+      <p>(“But what if you die?” she whispers, her head lifting from the eider-pillow.)</p>
+      <p>(You text me from the metro: “Don’t die.”)</p>
+    </div>
+
+    <div class=letter-8>
+      <p>Dear &mdash;</p>
+      <p>The dark recedes the sun is rising, each day I write you before the day even begins you do not realize but the black sky is actually purple the first moment of slightly less dark — now, right now — the sky shows itself purple and one has to wonder what is violence, what is the evil of this world if there is no darkness only a darker purple that lightens into indigo, that smooths away shadow, the world two-dimensional at this hour. I could touch this flattened sky, I could reach up and slap God’s cheeky ass —</p>
+    </div>
+
+    <div class=letter-9>
+      <p>Dear &mdash;</p>
+      <p>misa in dark linen —</p>
+      <p>    the chinchinero missing </p>
+      <p>his chains — a mourning call</p>
+      <p>    all act alone — a sham (ashamed) —</p>
+      <p>all of us dying for (lack of) Art</p>
+    </div>
+
+    <div class=letter-10>
+      <p>Dear &mdash;</p>
+      <p>No words — we perhaps reaching a limit of what can possibly be said in the face of abstraction, the variations on the word love, brushing our fingers against the edges of your structures.</p>
+      <p>Can’t there be less drama to the matter? I have never touched your face, I don’t think. </p>
+      <p>Letters nearing strangeness, a near-stranger. A strangeness dearer than what is yet known.</p>
+    </div>
+
+    <div class=letter-11>
+      <p>Dear &mdash;</p>
+      <p>O, it is hard not to call</p>
+      <p>not to know where you anchor</p>
+      <p>    great gulps of    ocean water</p>
+    </div>
+
+    <div class=letter-12>
+      <p>Dear &mdash;</p>
+      <p>I am not sure how to miss you anymore. I have lost even my skill for melancholy. Your absence was felt more when your messages filled my days from afar. Now silence is met with silence, and for the first time in months I notice stains on the sides of buildings, the swollen fingers of the woman beside me in the colectivo, the drawings pasted in a preschool window, there is so much world and so much room in my head.</p>
+    </div>
+
+  </body>
+</html>
