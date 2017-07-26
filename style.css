@@ -16,9 +16,6 @@ span {
   margin: 0.1em;
   border: 1px solid currentColor;
   cursor: move;
-  cursor: grab;
-  cursor: -moz-grab;
-  cursor: -webkit-grab;
   transform: none;
   transition: 1s transform;
 }
