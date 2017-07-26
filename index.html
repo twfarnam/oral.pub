@@ -3,41 +3,10 @@
     <link rel=stylesheet href=style.css>
     <script src="https://cdn.jsdelivr.net/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.blast/2.0.0/jquery.blast.min.js"></script>
-    <script>
-      $(function() {
-        $("p").blast({ delimiter: "word" });
+    <script src="script.js"></script>
 
-        var moveCount = 10;
-        var wordMoving;
-        var startX;
-        var startY;
-        $('span').mousedown(function(e) {
-          wordMoving = e.target;
-          $(e.target).addClass('moved');
-          var pct = Math.min(100, 100 * (1 - (moveCount++ / 50)));
-          console.log(pct);
-          // green: 
-          //$(document.body).css({ background: 'hsl(113, 13%, ' + pct + '%)' });
-          $(document.body).css({ background: 'hsl(234, 5%, ' + pct + '%)' });
-          startX = e.clientX;
-          startY = e.clientY;
-          // startX = $(e.target).css('left').slice(0,-2) * 1;
-          // startY = $(e.target).css('top').slice(0,-2) * 1;
-        });
-        $(document).mousemove(function(e) {
-          e.preventDefault();
-          if (wordMoving) {
-            //console.log($(wordMoving), startX, startY);
-            var x = e.clientX - startX;
-            var y = e.clientY - startY;
-            $(wordMoving).css({left: x, top: y});
-          }
-        });
-        $(document).mouseup(function(e) {
-          wordMoving = null;
-        });
-      });
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
   </head>
   <body>
 
