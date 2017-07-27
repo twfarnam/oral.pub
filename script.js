@@ -2,24 +2,27 @@
 $(function() {
   $("p").blast({ delimiter: "word" });
 
-  if ('ontouchstart' in window) {
+  $(document).on('mousedown', start);
+  $(document).on('mousemove', move);
+  $(document).on('mouseup', end);
+
+  $(document).on('touchstart', function touchBootstrap() {
+    $(document).off('touchstart', touchBootstrap);
+    $(document).off('mousedown', start);
+    $(document).off('mousemove', move);
+    $(document).off('mouseup', end);
     document.addEventListener('touchstart', start, { passive: false });
     document.addEventListener('touchmove', move, { passive: false });
     $(document).on('touchend', end);
     $(document).on('touchcancel', end);
-  }
-  else {
-    $(document).on('mousedown', start);
-    $(document).on('mousemove', move);
-    $(document).on('mouseup', end);
-  }
+  });
 
   var moveCount = 0;
   var wordMoving;
   var startX;
   var startY;
   var currentScroll;
-
+ 
   function start(e) {
     if (e.target.tagName !== 'SPAN')
       return;
@@ -55,7 +58,6 @@ $(function() {
       var x = 'clientX' in e ? e.clientX : e.touches[0].clientX
       var y = 'clientY' in e ? e.clientY : e.touches[0].clientY
 
-      console.log('move', startY);
       $(wordMoving).css({ left: x - startX, top: y - startY });
 
       lastY = y;
