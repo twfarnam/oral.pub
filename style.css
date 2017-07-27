@@ -1,6 +1,7 @@
 
 body {
   transition: background-color 1s;
+  padding: 2rem;
 }
 
 p {
