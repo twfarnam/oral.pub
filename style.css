@@ -10,6 +10,19 @@ p {
   margin: 1rem auto 3rem;
 }
 
+p.indent {
+  text-indent: 6rem;
+}
+
+.letter-9 p {
+  max-width: 700px;
+}
+
+.letter-11 p:last-child span:first-child,
+.letter-11 p:last-child span:nth-child(4) {
+  margin-left: 4rem;
+}
+
 span {
   position: relative;
   display: inline-block;
@@ -17,18 +30,18 @@ span {
   margin: 0.1em;
   border: 1px solid currentColor;
   cursor: move;
+  text-indent: 0;
   transform: none;
   transition: 1s transform;
 }
 
-span:hover {
-  transform: rotate(-5deg);
-}
+/* span:hover { */
+/*   transform: rotate(-5deg); */
+/* } */
 
-span:nth-child(2n):hover {
-  transform: rotate(5deg);
-}
-
+/* span:nth-child(2n):hover { */
+/*   transform: rotate(5deg); */
+/* } */
 
 body[style] span:hover,
 body[style] span.moved {
@@ -46,9 +59,10 @@ body[style] span.moved {
   p {
     margin: 3.5em auto;
   }
+
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1150px) {
 
   .letter-2 {
     margin-top: -12rem;
@@ -104,7 +118,7 @@ body[style] span.moved {
 
 }
 
-@media (min-width: 1250px) {
+@media (min-width: 1350px) {
 
   body > div:nth-child(2n) p {
     margin-right: 10%;

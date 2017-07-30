@@ -1,12 +1,21 @@
 
 $(function() {
-  $("p").blast({ delimiter: "word" });
+
+  var moveCount = 0;
+  var maxMoves = 40;
+  var wordMoving;
+  var startX;
+  var startY;
+  var currentScroll;
+ 
+  $('p').blast({ delimiter: 'word' });
 
   $(document).on('mousedown', start);
   $(document).on('mousemove', move);
   $(document).on('mouseup', end);
 
   $(document).on('touchstart', function touchBootstrap() {
+    maxMoves = 30;
     $(document).off('touchstart', touchBootstrap);
     $(document).off('mousedown', start);
     $(document).off('mousemove', move);
@@ -17,12 +26,6 @@ $(function() {
     $(document).on('touchcancel', end);
   });
 
-  var moveCount = 0;
-  var wordMoving;
-  var startX;
-  var startY;
-  var currentScroll;
- 
   function start(e) {
     if (e.target.tagName !== 'SPAN')
       return;
@@ -35,7 +38,7 @@ $(function() {
 
     $(e.target).addClass('moved');
 
-    var pct = Math.min(100, 100 * (1 - ((moveCount++ + 10) / 50)));
+    var pct = Math.min(100, 100 * (1 - ((moveCount++ + 5) / (maxMoves + 5))));
     $(document.body).css({ background: 'hsl(234, 5%, ' + pct + '%)' });
 
     startX = 'clientX' in e ? e.clientX : e.touches[0].clientX
